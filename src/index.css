@@ -1,0 +1,224 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --color-canvas: #070709;
+  --color-canvas-depth: #0d0d12;
+  --color-canvas-surface: #14141c;
+  --color-ivory: #f6f3ec;
+  --color-ivory-dim: #c5c1b6;
+  --color-silver-muted: #8b8a92;
+  --color-amber-glow: #f0cf98;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #070709;
+  color: #f6f3ec;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: rgba(240, 207, 152, 0.25);
+  color: #ffffff;
+}
+
+/* Custom subtle parchment and grain overlays */
+.grain-overlay {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Soft slow floating keyframes */
+@keyframes floatSlow1 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1.2deg);
+  }
+}
+
+@keyframes floatSlow2 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(-1.5deg);
+  }
+}
+
+@keyframes floatSlow3 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.8deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 25px rgba(240, 207, 152, 0.35));
+  }
+  50% {
+    opacity: 0.95;
+    filter: drop-shadow(0 0 45px rgba(240, 207, 152, 0.55));
+  }
+}
+
+.animate-float-1 {
+  animation: floatSlow1 9s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: floatSlow2 12s ease-in-out infinite;
+}
+
+.animate-float-3 {
+  animation: floatSlow3 11s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 7s ease-in-out infinite;
+}
+
+@keyframes swayBunting {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(1.8deg);
+  }
+}
+
+@keyframes bobBalloon1 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(-2deg);
+  }
+}
+
+@keyframes bobBalloon2 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-22px) rotate(3deg);
+  }
+}
+
+@keyframes flickerCandle {
+  0%, 100% {
+    transform: scale(1) skewX(0deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 8px rgba(255, 209, 102, 0.9));
+  }
+  25% {
+    transform: scale(1.08, 0.95) skewX(-2deg);
+    opacity: 0.85;
+    filter: drop-shadow(0 0 12px rgba(255, 180, 50, 1));
+  }
+  50% {
+    transform: scale(0.95, 1.05) skewX(2deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 10px rgba(255, 230, 120, 0.95));
+  }
+  75% {
+    transform: scale(1.04, 0.98) skewX(-1deg);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 14px rgba(255, 190, 70, 0.85));
+  }
+}
+
+@keyframes flutterWing {
+  0%, 100% {
+    transform: scaleX(1) rotate(0deg);
+  }
+  50% {
+    transform: scaleX(0.2) rotate(-5deg);
+  }
+}
+
+@keyframes driftPetal {
+  0% {
+    transform: translateY(-10px) translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(120px) translateX(25px) rotate(70deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fairyTwinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.9);
+    filter: drop-shadow(0 0 3px rgba(255, 230, 180, 0.4));
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 10px rgba(255, 235, 190, 0.9));
+  }
+}
+
+.animate-sway {
+  animation: swayBunting 6s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.animate-balloon-1 {
+  animation: bobBalloon1 7s ease-in-out infinite;
+}
+
+.animate-balloon-2 {
+  animation: bobBalloon2 9s ease-in-out infinite;
+}
+
+.animate-candle-flame {
+  animation: flickerCandle 1.8s ease-in-out infinite;
+}
+
+.animate-flutter {
+  animation: flutterWing 0.6s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+.animate-fairy-light {
+  animation: fairyTwinkle 3.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-1,
+  .animate-float-2,
+  .animate-float-3,
+  .animate-pulse-glow,
+  .animate-sway,
+  .animate-balloon-1,
+  .animate-balloon-2,
+  .animate-candle-flame,
+  .animate-flutter,
+  .animate-fairy-light {
+    animation: none !important;
+  }
+}

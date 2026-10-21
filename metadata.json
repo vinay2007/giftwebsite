@@ -1,0 +1,6 @@
+{
+  "name": "Somewhere Between Us - Romantic Birthday Experience",
+  "description": "An immersive, cinematic birthday experience crafted with slow floating motion, personal memories, letter, and song.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
